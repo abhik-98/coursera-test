@@ -4,18 +4,21 @@
 
           function myCtrl($scope){
             $scope.name = "";
-            $scope.output = "";
+            $scope.output1= "";
+            $scope.output2= "";
             $scope.cal = function(){
+                $scope.output1= "";
+                $scope.output2= "";
               let str = $scope.name;
               let word = str.split(",");
               if(str == ""){
-                $scope.output = "Please enter data first";
+                $scope.output1 = "Please enter data first";
               }
               else if(word.length <= 3){
-                $scope.output = "Enjoy!";
+                $scope.output2 = "Enjoy!";
               }
               else{
-                $scope.output = "Too much!";
+                $scope.output2 = "Too much!";
               }
 
             }

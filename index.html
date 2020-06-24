@@ -1,7 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 25px,25px,25px,25px;
 
+    }
+    .G{
+        color: green;
+    }
+
+    .R{
+        color: red;
+    }
+
+    </style>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <meta charset="utf-8">
     <script src="angular.mini.js"></script>
     <script src="app.js"></script>
@@ -12,9 +27,11 @@
    <body ng-app = "LunchCheck">
       <div ng-controller = "LunchCheckController">
         <!--do NOT consider and empty item, i.e., `, ,` as an item towards to the count -->
-        <input type = "text" ng-model ="name"  ></input>
-        <button ng-click = "cal()">Check If Too Much</button>
-        <p>{{output}}<p>
+        <h2 class="w3-text-blue">Lunch Checker<h2>
+        <input class="w3-input w3-border w3-large w3-border-blue" type = "text" ng-model ="name" placeholder="List comma seperated values with empty values not taken into count" ></input><br>
+        <button class="w3-button w3-round w3-border w3-border-blue" ng-click = "cal()" class="w3-size-large">Check If Too Much</button>
+        <span class = "R">{{output1}}<span>
+            <span class = "G">{{output2}}<span>
       </div>
   </body>
 </html>
