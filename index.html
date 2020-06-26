@@ -1,67 +1,67 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <style>
+<head>
+  <title>Module2</title>
+   <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+  <style type="text/css">
+    
+
+    *{
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    div{
+      background-color: lightblue;
+    }
+
     body{
-        font-family: Arial, Helvetica, sans-serif;
-        padding: 25px,25px,25px,25px;
-
-    }
-    .G{
-        color: green;
+      font-family: Helvetica;
+      text-align: center;
     }
 
-    .R{
-        color: red;
+    p,span{
+      border: 2px solid;
+      padding: 10px;
+      margin: 10px;
+      background-color: grey;
+      float: left;
     }
 
-    </style>
+    span{
+       font-size: 125%;
+       float: right;
+    }
 
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <meta charset="utf-8">
-    <script src="angular.mini.js"></script>
-    <script>
-    (function(){
-              'use strict';
-              angular.module("LunchCheck",[]).controller("LunchCheckController",myCtrl);
+    header{
+      font-size: 170%;
+    }
 
-              function myCtrl($scope){
-                $scope.name = "";
-                $scope.output1= "";
-                $scope.output2= "";
-                $scope.cal = function(){
-                    $scope.output1= "";
-                    $scope.output2= "";
-                  let str = $scope.name;
-                  let word = str.split(",");
-                  if(str == ""){
-                    $scope.output1 = "Please enter data first";
-                  }
-                  else if(word.length <= 3){
-                    $scope.output2 = "Enjoy!";
-                  }
-                  else{
-                    $scope.output2 = "Too much!";
-                  }
 
-                }
-              };
+  </style>
+</head>
+<body>
+<header>
+  
+      Our Menu
+  
+</header>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4 col-md-6 col-sm-6 .col-12" ><p ><span style="background-color: #DEB887">Chicken</span> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div>
+    <div class="col-lg-4 col-md-6 col-sm-6 .col-12" ><p><span style="background-color: #5F9EA0">Beef</span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div>
+   <div class="col-lg-4 col-md-12 col-sm-12 .col-12"><p><span style="background-color: #FF7F50">Sushi</span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div>
 
-            })();
+  </div>
+  
+</div>
 
-    </script>
-
-    <title>Assignment 1</title>
-  </head>
-
-   <body ng-app = "LunchCheck">
-      <div ng-controller = "LunchCheckController">
-        <!--do NOT consider and empty item, i.e., `, ,` as an item towards to the count -->
-        <h2 class="w3-text-blue">Lunch Checker<h2>
-        <input class="w3-input w3-border w3-large w3-border-blue" type = "text" ng-model ="name" placeholder="List comma seperated values with empty values not taken into count" ></input><br>
-        <button class="w3-button w3-round w3-border w3-border-blue" ng-click = "cal()" class="w3-size-large">Check If Too Much</button>
-        <span class = "R">{{output1}}<span>
-            <span class = "G">{{output2}}<span>
-      </div>
-  </body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
 </html>
