@@ -1,25 +1,60 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Module2</title>
-   <meta charset="utf-8">
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Shopping List Check Off</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css" > 
-</head>
-<body>
-<header>
-  
-      Our Menu
-  
-</header>
-<div class="container">
-  <div class="row">
-    <div class="col-lg-4 col-md-6 col-sm-12 " ><div class = "box"><span style="background-color: #DEB887">Chicken</span><br><br> <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div></div>
-    <div class="col-lg-4 col-md-6 col-sm-12 " ><div class = "box"><span style="background-color: #5F9EA0">Beef</span><br><br><p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div></div>
-   <div class="col-lg-4 col-md-12 col-sm-12 "><div class = "box"><span style="background-color: #FF7F50">Sushi</span><br><br><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div></div>
+    <script type="text/javascript" src="angular.mini.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style>
+      .emptyMessage {
+        font-weight: bold;
+        color: red;
+        font-size: 1.2em;
+      }
+      li {
+        margin-bottom: 7px;
+        font-size: 1.2em;
+      }
+      li > button {
+        margin-left: 6px;
+      }
+      button > span {
+        color: green;
+      }
+    </style>
+  </head>
+<body ng-app = "ShoppingListCheckOff">
+  <div class="container">
+  <h1>Shopping List Check Off</h1>
 
+  <div class="row">
+
+    <!-- To Buy List -->
+    <div class="col-md-6" ng-controller = "ToBuyController as toBuy">
+     <h2>To Buy:</h2>
+     <ul>
+       <li ng-repeat = 'item in toBuy.items'>
+         Buy {{item.name}}  {{item.quantity}}
+         <button class="btn btn-default" ng-click = 'toBuy.bought($index)'><span class="glyphicon glyphicon-ok"></span> Bought</button>
+       </li>
+     </ul>
+ 
+     <div class="emptyMessage" ng-if = "toBuy.items.length == 0">Everything is bought!</div>
+    </div>
+
+    <!-- Already Bought List -->
+    <div class="col-md-6" ng-controller = 'AlreadyBoughtController as showBought'>
+     <h2>Already Bought:</h2>
+     <ul>
+       
+       <li ng-repeat = 'item in showBought.items'>
+          Bought {{item.name}}  {{item.quantity}}
+       </li>
+     </ul>
+     <div class="emptyMessage" ng-if = "showBought.items.length == 0">Nothing bought yet.</div>
+    </div>
   </div>
-  
 </div>
 
 </body>
